@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Calle Marketing | Estratega Digital</title>
+  <meta name="description" content="Ayudo a negocios a consolidar su presencia digital con estrategia, contenido persuasivo y campañas de publicidad digital (Ads) de alto rendimiento.">
+  <meta name="theme-color" content="#E8ECF1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Juan Calle Marketing | Estratega Digital">
+  <meta property="og:description" content="Estrategia, contenido persuasivo y publicidad digital para negocios que quieren vender más. Mira mi portafolio.">
+  <meta property="og:url" content="https://juancallemarketing.vercel.app/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="saltar" href="#portafolio">Saltar al portafolio</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-fila">
+      <a class="logo" href="#inicio" aria-label="Juan Calle Marketing, inicio">Juan Calle <span>Marketing</span></a>
+      <button class="menu-boton" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="#portafolio">Portafolio</a>
+        <a href="#quien-soy">Quién soy</a>
+        <a href="#pilares">Pilares</a>
+        <a href="#sistema">Growth System</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#testimonios">Testimonios</a>
+        <a class="boton boton-chico" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+      <div class="contenedor hero-grilla" id="hero-grilla">
+        <div class="hero-texto">
+          <p class="hero-rol">Estratega digital en Medellín</p>
+          <h1>Construyo la presencia digital de tu negocio.</h1>
+          <p class="hero-bajada">Ayudo a marcas y negocios a escalar con estrategia de negocio, contenido persuasivo y publicidad digital de alta rentabilidad (Ads).</p>
+          <div class="hero-botones">
+            <a class="boton" href="#portafolio">Ver portafolio</a>
+            <a class="boton boton-borde" href="#sistema">Mi sistema de trabajo</a>
+          </div>
+          <p class="hero-dato">Más de 30 negocios han confiado en mi trabajo.</p>
+        </div>
+        <div class="hero-collage" id="hero-collage" aria-label="Trabajos destacados"></div>
+      </div>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section class="seccion seccion-noche" id="portafolio">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Portafolio</h2>
+          <p>Videos, reels y piezas gráficas de proyectos con los que he trabajado. Haz clic en cualquiera para verlo completo.</p>
+        </div>
+
+        <div class="filtros" aria-label="Filtrar trabajos">
+          <div class="filtros-grupo" id="filtros-tipo" role="group" aria-label="Tipo de trabajo"></div>
+          <div class="filtros-grupo" id="filtros-marca" role="group" aria-label="Marca"></div>
+        </div>
+        <p class="conteo" id="conteo" aria-live="polite"></p>
+
+        <div class="galeria" id="galeria"></div>
+
+        <p class="portafolio-pie">
+          ¿Quieres ver más proyectos? <a href="https://www.behance.net/gallery/252045209/Portafolio-Juan-Calle" target="_blank" rel="noopener">Mira el portafolio completo en Behance</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- QUIÉN SOY -->
+    <section class="seccion" id="quien-soy">
+      <div class="contenedor dos-col">
+        <div>
+          <h2>Juan Calle</h2>
+          <p>Soy Juan Calle, estratega digital colombiano enfocado en ayudar a negocios y emprendedores a construir sistemas reales de crecimiento y ventas.</p>
+          <p>Mi trabajo se centra en estructurar marcas desde la base: posicionamiento, comunicación, contenido, pauta y procesos comerciales, para que las empresas puedan atraer clientes, vender más y operar con mayor claridad.</p>
+          <p>Creo en un marketing que va más allá de publicar: se trata de entender el negocio, definir un mensaje claro y crear un ecosistema que convierta atención en clientes.</p>
+        </div>
+        <div>
+          <h3 class="subtitulo">Así trabajo con cada marca</h3>
+          <ol class="pasos-lista">
+            <li>Diagnosticar dónde está la oportunidad.</li>
+            <li>Construir una estrategia clara y accionable.</li>
+            <li>Ejecutar contenido y activos de marca alineados al objetivo.</li>
+            <li>Implementar sistemas de captación y seguimiento.</li>
+            <li>Optimizar constantemente hasta ver resultados medibles.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILARES -->
+    <section class="seccion seccion-blanca" id="pilares">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Mi sistema de trabajo</h2>
+          <p>Un enfoque metódico e integral, estructurado en tres áreas para consolidar tu marca y vender más en digital.</p>
+        </div>
+        <div class="pilares">
+          <article class="pilar">
+            <h3>Estrategia de contenido</h3>
+            <p>Se diagnostica el estado del negocio, los objetivos y los lineamientos para planificar una estrategia adaptada.</p>
+            <ul>
+              <li>Diagnóstico de canales</li>
+              <li>Lineamientos estratégicos</li>
+              <li>Planificación adaptada</li>
+            </ul>
+          </article>
+          <article class="pilar">
+            <h3>Creación de contenido persuasivo</h3>
+            <p>Parrilla de contenido, sesiones de grabación, optimización y edición de contenido, piezas gráficas, todo alineado para persuadir a tu público objetivo.</p>
+            <ul>
+              <li>Parrilla y guiones persuasivos</li>
+              <li>Sesiones de grabación dirigidas</li>
+              <li>Edición de video y gráficos</li>
+            </ul>
+          </article>
+          <article class="pilar">
+            <h3>Publicidad Ads</h3>
+            <p>Campañas en Facebook Ads y estrategia actualizada para atraer personas interesadas, con embudos pensados para convertir.</p>
+            <ul>
+              <li>Campañas en Facebook Ads</li>
+              <li>Atracción de interesados</li>
+              <li>Embudos de conversión</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="seccion" id="resultados">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Resultados y alcance</h2>
+          <p>Estructuro tu ecosistema digital para que cada acción tenga un sentido y un contexto claros.</p>
+        </div>
+        <div class="resultados">
+          <div>
+            <h3>Alcance medible</h3>
+            <p>Estrategias enfocadas en maximizar tu alcance digital y atraer tráfico calificado.</p>
+          </div>
+          <div>
+            <h3>Mayor visibilidad</h3>
+            <p>Posicionamos tu marca frente a las personas adecuadas y elevamos su reconocimiento en tu sector.</p>
+          </div>
+          <div>
+            <h3>Planificación organizada y constante</h3>
+            <p>Una estructura para que tu comunicación y tus ventas mantengan un ritmo sólido y constante.</p>
+          </div>
+          <div>
+            <h3>Enfoque en rentabilidad</h3>
+            <p>Atención total a la viabilidad, el crecimiento financiero y el retorno de inversión de tu negocio.</p>
+          </div>
+        </div>
+        <blockquote class="cita-grande">Un ecosistema digital para que todo tenga un sentido y un contexto.</blockquote>
+      </div>
+    </section>
+
+    <!-- GROWTH SYSTEM -->
+    <section class="seccion seccion-blanca" id="sistema">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Opciones de inversión</h2>
+          <p>Elige mi paquete completo o diseña un plan adaptado a tus objetivos y a tu presupuesto.</p>
+        </div>
+        <div class="planes">
+          <article class="plan plan-principal">
+            <p class="plan-etiqueta">Paquete completo</p>
+            <h3>Growth System</h3>
+            <p class="plan-precio">Precio variable</p>
+            <p>Incluye todos mis pilares y servicios integrados: estrategia de contenido, creación de contenido persuasivo y publicidad Ads. El costo varía según la cantidad de entregables acordados.</p>
+            <ul>
+              <li>Diagnóstico y estrategia adaptada</li>
+              <li>Parrilla de contenido y guiones</li>
+              <li>Sesiones de grabación y edición de video</li>
+              <li>Campañas de pauta en Facebook Ads</li>
+              <li>Embudos de conversión y optimización</li>
+            </ul>
+            <a class="boton boton-claro" href="#contacto">Me interesa este paquete</a>
+          </article>
+          <article class="plan plan-medida">
+            <p class="plan-etiqueta">A medida</p>
+            <h3>Planes personalizados</h3>
+            <p>Un plan hecho según tus objetivos de marca, tu presupuesto disponible y tus proyecciones de facturación.</p>
+            <p class="plan-pregunta">Para diseñarlo, necesito saber:</p>
+            <ul>
+              <li>¿Cuál es tu objetivo de facturación actual y en cuánto tiempo quieres lograrlo?</li>
+              <li>¿Con qué presupuesto de pauta mensual cuentas?</li>
+              <li>¿Tienes un equipo de ventas listo para atender a los interesados?</li>
+              <li>¿Qué entregables (videos, landing pages, textos) son prioritarios hoy?</li>
+            </ul>
+            <a class="boton" href="#contacto">Diseñar mi plan</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="seccion" id="proceso">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Mi proceso de trabajo</h2>
+          <p>Este es el proceso del paquete Growth System. Los planes personalizados se adaptan a lo que acordemos.</p>
+        </div>
+        <ol class="proceso">
+          <li>
+            <h3>Descubrimiento y contexto</h3>
+            <p>Auditoría inicial de tu posicionamiento, competidores, audiencia y canales digitales para identificar oportunidades.</p>
+          </li>
+          <li>
+            <h3>Estrategia y objetivos</h3>
+            <p>Propuesta comercial, indicadores de crecimiento y lineamientos estratégicos del negocio.</p>
+          </li>
+          <li>
+            <h3>Contenido persuasivo</h3>
+            <p>Parrilla de contenidos, textos persuasivos, dirección de grabaciones y edición de videos y piezas gráficas.</p>
+          </li>
+          <li>
+            <h3>Pauta y optimización</h3>
+            <p>Campañas de conversión en Facebook Ads, medición constante de métricas clave y optimización enfocada en rentabilidad.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="seccion seccion-blanca" id="testimonios">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Lo que dicen quienes han trabajado conmigo</h2>
+        </div>
+        <div class="testimonios">
+          <figure>
+            <blockquote>Gracias al trabajo estratégico de Juan, logramos estructurar una comunicación sólida en el sector de diseño y arquitectura, posicionando el microconcreto como material premium.</blockquote>
+            <figcaption><strong>Felipe Espinoza</strong>, CEO de ZenKon Concrete Design</figcaption>
+          </figure>
+          <figure>
+            <blockquote>El enfoque de pauta en Ads que diseñó Juan Calle nos permitió captar leads calificados para nuestros proyectos de propiedad raíz en zonas muy exclusivas.</blockquote>
+            <figcaption><strong>Diana Pulgarín</strong>, CEO de Inmobiliaria DP</figcaption>
+          </figure>
+          <figure>
+            <blockquote>Estructuró la comunicación digital de la firma. Los contenidos persuasivos alineados a nuestro público veterinario y legal elevaron notablemente el volumen de consultas.</blockquote>
+            <figcaption><strong>Silvia Rodríguez</strong>, abogada y CEO de Legal Pets</figcaption>
+          </figure>
+          <figure>
+            <blockquote>Su habilidad para aplicar storytelling y planificar contenidos optimizados para marca personal me dio la autoridad que requería para mis conferencias.</blockquote>
+            <figcaption><strong>Juan Jaramillo</strong>, coach internacional</figcaption>
+          </figure>
+          <figure>
+            <blockquote>Un branding emocional increíble. Definimos un mensaje comercial claro y estructuramos campañas segmentadas que convirtieron la atención en clientes reales.</blockquote>
+            <figcaption><strong>Saby Enciso</strong>, CEO de Saby Enciso Realtor</figcaption>
+          </figure>
+          <figure>
+            <blockquote>Excelente estrategia de contenidos para captación de inversores inmobiliarios de alto valor. Un enfoque analítico y altamente recomendable.</blockquote>
+            <figcaption><strong>Lina Quiroz</strong>, estratega inmobiliaria</figcaption>
+          </figure>
+          <figure>
+            <blockquote>Juan nos ayudó a estructurar la marca desde la base. Logramos una planificación de contenidos organizada para la clínica que atrajo a decenas de dueños de mascotas.</blockquote>
+            <figcaption><strong>La Vete</strong>, veterinaria</figcaption>
+          </figure>
+          <figure>
+            <blockquote>Nuestras ventas directas en web aumentaron gracias a embudos y pautas en Meta Ads optimizadas por Juan. El retorno en pauta de las gomitas enchiladas ha sido brutal.</blockquote>
+            <figcaption><strong>Enchilaitos</strong>, gomitas enchiladas</figcaption>
+          </figure>
+          <figure>
+            <blockquote>La combinación de fotos, videos persuasivos y campañas estructuradas conectó a la perfección con nuestra comunidad urbana de hoodies y streetwear.</blockquote>
+            <figcaption><strong>Capolusso</strong>, marca de ropa</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="seccion seccion-noche" id="contacto">
+      <div class="contenedor dos-col">
+        <div>
+          <h2>Hablemos de tu negocio</h2>
+          <p>Escríbeme por WhatsApp o por correo para iniciar tu diagnóstico estratégico.</p>
+          <dl class="datos">
+            <div><dt>Correo</dt><dd><a href="mailto:juancallemarketing01@gmail.com">juancallemarketing01@gmail.com</a></dd></div>
+            <div><dt>WhatsApp</dt><dd><a href="https://wa.me/573053247075" target="_blank" rel="noopener">+57 305 324 7075</a></dd></div>
+            <div><dt>Ubicación</dt><dd>Medellín, Colombia</dd></div>
+          </dl>
+        </div>
+        <form class="formulario" id="formulario" novalidate>
+          <p class="formulario-ayuda">Completa tus datos y se abrirá WhatsApp con el mensaje listo para enviarme.</p>
+          <label for="f-nombre">Tu nombre</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+          <label for="f-negocio">Tu negocio</label>
+          <input id="f-negocio" name="negocio" type="text" autocomplete="organization">
+          <label for="f-mensaje">¿En qué te puedo ayudar?</label>
+          <textarea id="f-mensaje" name="mensaje" rows="4" required></textarea>
+          <p class="formulario-error" id="formulario-error" role="alert" hidden>Escribe tu nombre y tu mensaje para continuar.</p>
+          <button class="boton boton-claro" type="submit">Enviar por WhatsApp</button>
+          <a class="enlace-correo" href="mailto:juancallemarketing01@gmail.com">O escríbeme por correo</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-fila">
+      <p><strong>Juan Calle Marketing</strong> · Estratega digital</p>
+      <p>© <span id="anio">2026</span> Juan Calle Marketing. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Visor para ver videos y piezas en grande -->
+  <dialog class="visor" id="visor" aria-label="Vista ampliada del trabajo">
+    <div class="visor-marco">
+      <button class="visor-cerrar" id="visor-cerrar" type="button" aria-label="Cerrar">Cerrar</button>
+      <div class="visor-media" id="visor-media"></div>
+      <div class="visor-nav" id="visor-nav" hidden>
+        <button type="button" id="visor-ant" aria-label="Imagen anterior">Anterior</button>
+        <span id="visor-contador" aria-live="polite"></span>
+        <button type="button" id="visor-sig" aria-label="Imagen siguiente">Siguiente</button>
+      </div>
+      <div class="visor-texto">
+        <p class="visor-marca" id="visor-marca"></p>
+        <p class="visor-titulo" id="visor-titulo"></p>
+        <p class="visor-desc" id="visor-desc"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
