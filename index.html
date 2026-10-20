@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Calle Marketing | Estratega Digital</title>
+  <meta name="description" content="Ayudo a negocios a consolidar su presencia digital con estrategia, contenido persuasivo y campañas de publicidad digital (Ads) de alto rendimiento.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Juan Calle Marketing | Estratega Digital">
+  <meta property="og:description" content="Estrategia, contenido persuasivo y publicidad digital para negocios que quieren vender más. Mira mi portafolio.">
+  <meta property="og:url" content="https://juancallemarketing.vercel.app/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="saltar" href="#portafolio">Saltar al portafolio</a>
+
+  <!-- ENCABEZADO -->
+  <header class="cabecera">
+    <div class="contenedor cabecera-fila">
+      <a class="logo" href="#inicio" aria-label="Juan Calle Marketing, inicio">
+        <img class="logo-foto" src="assets/foto-juan.jpg" alt="Foto de Juan Calle" width="52" height="52">
+        <span class="logo-texto">Juan Calle <span class="ligero">Marketing</span></span>
+      </a>
+      <button class="menu-boton" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="#portafolio">Portafolio</a>
+        <a href="#quien-soy">Quién soy</a>
+        <a href="#sistema">Mi sistema</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#testimonios">Testimonios</a>
+        <a class="boton boton--negro boton--chico" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+      <div class="contenedor hero-grilla">
+        <div class="hero-texto">
+          <p class="hero-rol"><span class="punto" aria-hidden="true"></span>Estratega digital en Medellín</p>
+          <h1>Construyo la <strong>presencia digital</strong> de tu negocio.</h1>
+          <p class="hero-bajada">Ayudo a marcas y negocios a escalar con estrategia de negocio, contenido persuasivo y publicidad digital de alta rentabilidad (Ads).</p>
+          <div class="hero-botones">
+            <a class="boton boton--negro" href="#portafolio">Ver portafolio</a>
+            <a class="boton boton--borde" href="#sistema">Mi sistema de trabajo</a>
+          </div>
+          <div class="validacion">
+            <div class="estrellas" role="img" aria-label="Cinco estrellas">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p>Más de 30 negocios han confiado en mi trabajo.</p>
+          </div>
+        </div>
+        <div class="hero-lado">
+          <div class="hero-videos" id="hero-videos"></div>
+          <p class="hero-pie">Haz clic en un video para verlo aquí mismo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section class="seccion seccion--negra" id="portafolio">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Mi <strong>portafolio</strong> en videos y piezas.</h2>
+          <p>Cada trabajo se reproduce aquí mismo y lleva el enlace a su publicación original.</p>
+        </div>
+
+        <div class="filtros" id="filtros" role="group" aria-label="Filtrar por marca"></div>
+        <p class="conteo" id="conteo" aria-live="polite"></p>
+
+        <div class="galeria" id="galeria"></div>
+
+        <p class="nota-creditos">Los videos marcados con © CB Studio son de CB Studio. En Íntimas, Malawy, Magno y Renuevo me encargué de la edición.</p>
+      </div>
+    </section>
+
+    <!-- QUIÉN SOY -->
+    <section class="seccion" id="quien-soy">
+      <div class="contenedor dos-col">
+        <div>
+          <h2>Soy <strong>Juan Calle</strong>.</h2>
+          <p class="texto-grande">Estratega digital colombiano enfocado en ayudar a negocios y emprendedores a construir sistemas reales de crecimiento y ventas.</p>
+          <p class="texto-grande">Estructuro marcas desde la base: posicionamiento, comunicación, contenido, pauta y procesos comerciales, para que atraigan clientes, vendan más y operen con mayor claridad.</p>
+          <p class="texto-grande">Creo en un marketing que va más allá de publicar: entender el negocio, definir un mensaje claro y crear un ecosistema que convierta atención en clientes.</p>
+        </div>
+        <div>
+          <ol class="pasos">
+            <li><span class="paso-n" aria-hidden="true">1</span>Diagnosticar dónde está la oportunidad.</li>
+            <li><span class="paso-n" aria-hidden="true">2</span>Construir una estrategia clara y accionable.</li>
+            <li><span class="paso-n" aria-hidden="true">3</span>Ejecutar contenido y activos de marca alineados al objetivo.</li>
+            <li><span class="paso-n" aria-hidden="true">4</span>Implementar sistemas de captación y seguimiento.</li>
+            <li><span class="paso-n" aria-hidden="true">5</span>Optimizar constantemente hasta ver resultados medibles.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- MI SISTEMA DE TRABAJO -->
+    <section class="seccion seccion--sistema" id="sistema">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Mi <strong>sistema de trabajo</strong></h2>
+          <p>Elige un servicio para ver exactamente qué incluye.</p>
+        </div>
+
+        <div class="sistema">
+          <div class="tabs" role="tablist" aria-label="Servicios" aria-orientation="vertical">
+            <button class="tab" role="tab" id="tab-estrategia" aria-controls="panel-estrategia" aria-selected="true" type="button">
+              <span class="tab-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+              <span class="tab-texto">Estrategia digital y parrilla de contenidos</span>
+            </button>
+            <button class="tab" role="tab" id="tab-contenido" aria-controls="panel-contenido" aria-selected="false" tabindex="-1" type="button">
+              <span class="tab-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
+              <span class="tab-texto">Creación de contenido</span>
+            </button>
+            <button class="tab" role="tab" id="tab-redes" aria-controls="panel-redes" aria-selected="false" tabindex="-1" type="button">
+              <span class="tab-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
+              <span class="tab-texto">Manejo y optimización de redes sociales</span>
+            </button>
+            <button class="tab" role="tab" id="tab-pauta" aria-controls="panel-pauta" aria-selected="false" tabindex="-1" type="button">
+              <span class="tab-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+              <span class="tab-texto">Pauta</span>
+            </button>
+          </div>
+
+          <div class="paneles">
+            <div class="panel" role="tabpanel" id="panel-estrategia" aria-labelledby="tab-estrategia" tabindex="0">
+              <h3>Estrategia digital + parrilla de contenidos</h3>
+              <p class="panel-intro">Se desarrollará una estrategia mensual de contenido basada en los objetivos comerciales. Incluye:</p>
+              <ul class="checks">
+                <li>Análisis del comportamiento de la cuenta</li>
+                <li>Definición de objetivos mensuales</li>
+                <li>Investigación de tendencias</li>
+                <li>Definición de pilares de contenido</li>
+                <li>Ideas y formatos para videos</li>
+                <li>Parrilla de contenido mensual</li>
+                <li>Definición de temas y enfoques</li>
+                <li>Distribución estratégica del contenido</li>
+                <li>Recomendaciones de llamados a la acción</li>
+              </ul>
+              <div class="aviso"><p>La parrilla permitirá tener claridad sobre qué publicar, cuándo publicarlo y qué objetivo cumple cada contenido.</p></div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-contenido" aria-labelledby="tab-contenido" tabindex="0" hidden>
+              <h3>Creación de contenido</h3>
+              <p class="panel-intro">Producción de videos pensada para atraer y convertir. Incluye:</p>
+              <ul class="checks">
+                <li>Videos mensuales</li>
+                <li>Sesiones de grabación</li>
+                <li>Grabación profesional del contenido</li>
+                <li>Herramientas necesarias para la producción</li>
+                <li>Transporte</li>
+                <li>Dirección y estructura del contenido</li>
+                <li>Optimización del material grabado</li>
+                <li>Edición de videos</li>
+                <li>Adaptación del contenido para formatos de Instagram y TikTok</li>
+              </ul>
+              <div class="aviso aviso--suave">
+                <p class="aviso-titulo">¿Cómo se trabajará?</p>
+                <p>Antes de cada sesión se definirá qué contenido se va a grabar de acuerdo con la estrategia y las tendencias actuales.</p>
+              </div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-redes" aria-labelledby="tab-redes" tabindex="0" hidden>
+              <h3>Manejo y optimización de redes sociales</h3>
+              <p class="panel-intro">El objetivo será mantener las redes sociales activas, actualizadas y alineadas con las tendencias digitales. Incluye:</p>
+              <ul class="checks">
+                <li>Publicación del contenido</li>
+                <li>Organización del feed</li>
+                <li>Actualización de la cuenta según tendencias</li>
+                <li>Optimización de formatos</li>
+                <li>Publicación estratégica de los videos</li>
+                <li>Mantenimiento de la actividad de la cuenta</li>
+                <li>Revisión del comportamiento del contenido</li>
+                <li>Identificación de oportunidades de mejora</li>
+              </ul>
+              <div class="aviso"><p>La idea es que la cuenta tenga una presencia constante y profesional, evitando que Instagram se convierta simplemente en un catálogo de productos. La red social debe funcionar como un canal de atracción y generación de oportunidades comerciales.</p></div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-pauta" aria-labelledby="tab-pauta" tabindex="0" hidden>
+              <h3>Pauta</h3>
+              <p class="panel-intro">La gestión de pauta incluye:</p>
+              <ul class="checks">
+                <li>Estrategia publicitaria</li>
+                <li>Definición de objetivos</li>
+                <li>Segmentación de públicos</li>
+                <li>Configuración de campañas</li>
+                <li>Creación o adaptación de creativos publicitarios</li>
+                <li>Redacción de textos publicitarios</li>
+                <li>Optimización de campañas</li>
+                <li>Seguimiento del rendimiento</li>
+                <li>Ajustes según resultados</li>
+              </ul>
+              <div class="aviso">
+                <p class="aviso-titulo">Importante</p>
+                <p>El presupuesto destinado a las campañas de Facebook e Instagram Ads se paga por separado. Este dinero corresponde directamente a la inversión publicitaria en Meta y no hace parte de los honorarios del servicio. Tú defines el presupuesto publicitario disponible y se usa para ejecutar las campañas planteadas.</p>
+              </div>
+              <p class="panel-cierre">Mi servicio de pauta incluye: estrategia + segmentación + configuración + creativos + gestión + optimización. La inversión publicitaria corresponde directamente a Meta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="seccion seccion--negra seccion--resultados" id="resultados">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Resultados y <strong>alcance</strong></h2>
+          <p>Estructuro tu ecosistema digital para que cada acción tenga un sentido y un contexto claros.</p>
+        </div>
+        <div class="resultados">
+          <article class="resultado">
+            <span class="icono-verde" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+            <h3>Alcance medible</h3>
+            <p>Estrategias enfocadas en maximizar tu alcance digital y atraer tráfico calificado.</p>
+          </article>
+          <article class="resultado">
+            <span class="icono-verde" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>Mayor visibilidad</h3>
+            <p>Posicionamos tu marca frente a las personas adecuadas y elevamos su reconocimiento en tu sector.</p>
+          </article>
+          <article class="resultado">
+            <span class="icono-verde" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <h3>Planificación organizada y constante</h3>
+            <p>Una estructura para que tu comunicación y tus ventas mantengan un ritmo sólido y constante.</p>
+          </article>
+          <article class="resultado">
+            <span class="icono-verde" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            <h3>Enfoque en rentabilidad</h3>
+            <p>Atención total a la viabilidad, el crecimiento financiero y el retorno de inversión de tu negocio.</p>
+          </article>
+        </div>
+        <p class="cita-grande">Un ecosistema digital para que <strong>todo tenga sentido</strong> y contexto.</p>
+      </div>
+    </section>
+
+    <!-- OPCIONES DE INVERSIÓN -->
+    <section class="seccion seccion--planes" id="planes">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Opciones de <strong>inversión</strong></h2>
+          <p>Elige mi paquete completo o diseña un plan adaptado a tus objetivos y a tu presupuesto.</p>
+        </div>
+        <div class="planes">
+          <article class="plan plan--principal">
+            <p class="plan-etiqueta">Paquete completo</p>
+            <h3>Growth System</h3>
+            <p class="plan-precio">Precio variable</p>
+            <p>Incluye todos mis servicios integrados: estrategia y parrilla, creación de contenido, manejo de redes y pauta. El costo varía según los entregables acordados. La inversión en Meta Ads se paga aparte.</p>
+            <a class="boton boton--verde" href="#contacto">Me interesa este paquete</a>
+          </article>
+          <article class="plan plan--medida">
+            <p class="plan-etiqueta">A medida</p>
+            <h3>Plan personalizado</h3>
+            <p>Un plan hecho según tus objetivos de marca, tu presupuesto y tus proyecciones de facturación. Para diseñarlo necesito saber:</p>
+            <ul class="lista-simple">
+              <li>Tu objetivo de facturación y en cuánto tiempo quieres lograrlo.</li>
+              <li>Tu presupuesto mensual de pauta.</li>
+              <li>Si tienes un equipo de ventas listo para atender a los interesados.</li>
+              <li>Qué entregables son prioritarios hoy.</li>
+            </ul>
+            <a class="boton boton--negro" href="#contacto">Diseñar mi plan</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="seccion seccion--proceso" id="proceso">
+      <div class="contenedor">
+        <div class="encabezado">
+          <h2>Mi proceso de <strong>trabajo</strong></h2>
+        </div>
+        <ol class="proceso">
+          <li>
+            <span class="proceso-n" aria-hidden="true">1</span>
+            <h3>Descubrimiento y contexto</h3>
+            <p>Auditoría inicial de tu posicionamiento, competidores, audiencia y canales digitales para identificar oportunidades.</p>
+          </li>
+          <li>
+            <span class="proceso-n" aria-hidden="true">2</span>
+            <h3>Estrategia y objetivos</h3>
+            <p>Propuesta comercial, indicadores de crecimiento y lineamientos estratégicos del negocio.</p>
+          </li>
+          <li>
+            <span class="proceso-n" aria-hidden="true">3</span>
+            <h3>Contenido persuasivo</h3>
+            <p>Parrilla de contenidos, textos persuasivos, dirección de grabaciones y edición de videos y piezas gráficas.</p>
+          </li>
+          <li>
+            <span class="proceso-n" aria-hidden="true">4</span>
+            <h3>Pauta y optimización</h3>
+            <p>Campañas de conversión en Facebook Ads, medición constante de métricas clave y optimización enfocada en rentabilidad.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="seccion seccion--testimonios" id="testimonios">
+      <div class="contenedor testimonios-fila">
+        <div class="testimonios-texto">
+          <h2>Esto dijeron <strong>algunos de nuestros clientes</strong></h2>
+          <p>Desliza la pila o usa las flechas para leer cada testimonio.</p>
+          <div class="pila-controles">
+            <button class="pila-boton" id="pila-ant" type="button" aria-label="Testimonio anterior">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="pila-boton pila-boton--lleno" id="pila-sig" type="button" aria-label="Testimonio siguiente">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <span class="pila-contador" id="pila-contador" aria-live="polite"></span>
+          </div>
+          <div class="pila-puntos" id="pila-puntos" role="group" aria-label="Elegir testimonio"></div>
+        </div>
+
+        <div class="pila-zona">
+          <div class="pila" id="pila" role="group" aria-roledescription="pila de testimonios" aria-label="Testimonios de clientes">
+            <figure class="tarjeta" data-pos="0">
+              <div>
+                <svg class="comillas" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19C0 8 5 1.5 15 0l1.5 4.5C11 6 9 9.5 9 13h7v19H0zM23 32V19C23 8 28 1.5 38 0l1.5 4.5C34 6 32 9.5 32 13h7v19H23z"/></svg>
+                <blockquote>Gracias al trabajo estratégico de Juan, logramos estructurar una comunicación sólida en el sector de diseño y arquitectura, posicionando el microconcreto como material premium.</blockquote>
+              </div>
+              <figcaption>
+                <span class="tarjeta-quien"><strong>Felipe Espinoza</strong><span>CEO de ZenKon Concrete Design</span></span>
+                <a class="chip-ig" href="https://www.instagram.com/zenkondesign" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@zenkondesign</a>
+              </figcaption>
+            </figure>
+            <figure class="tarjeta" data-pos="1">
+              <div>
+                <svg class="comillas" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19C0 8 5 1.5 15 0l1.5 4.5C11 6 9 9.5 9 13h7v19H0zM23 32V19C23 8 28 1.5 38 0l1.5 4.5C34 6 32 9.5 32 13h7v19H23z"/></svg>
+                <blockquote>Me ha gustado todo el trabajo, seguimos en proceso y se trabaja con mucho profesionalismo.</blockquote>
+              </div>
+              <figcaption>
+                <span class="tarjeta-quien"><strong>Sergio Rivas</strong><span>Abogado</span></span>
+                <a class="chip-ig" href="https://www.instagram.com/abogado.sergiorivas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@abogado.sergiorivas</a>
+              </figcaption>
+            </figure>
+            <figure class="tarjeta" data-pos="2">
+              <div>
+                <svg class="comillas" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19C0 8 5 1.5 15 0l1.5 4.5C11 6 9 9.5 9 13h7v19H0zM23 32V19C23 8 28 1.5 38 0l1.5 4.5C34 6 32 9.5 32 13h7v19H23z"/></svg>
+                <blockquote>Un branding emocional increíble. Definimos un mensaje comercial claro y estructuramos campañas segmentadas que convirtieron la atención en clientes reales.</blockquote>
+              </div>
+              <figcaption>
+                <span class="tarjeta-quien"><strong>Saby Enciso</strong><span>CEO de Saby Enciso Realtor</span></span>
+                <a class="chip-ig" href="https://www.instagram.com/sabyenciso.realtor" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@sabyenciso.realtor</a>
+              </figcaption>
+            </figure>
+            <figure class="tarjeta" data-pos="3">
+              <div>
+                <svg class="comillas" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19C0 8 5 1.5 15 0l1.5 4.5C11 6 9 9.5 9 13h7v19H0zM23 32V19C23 8 28 1.5 38 0l1.5 4.5C34 6 32 9.5 32 13h7v19H23z"/></svg>
+                <blockquote>Juan nos ayudó a estructurar la marca desde la base. Logramos una planificación de contenidos organizada para la clínica que atrajo a decenas de dueños de mascotas.</blockquote>
+              </div>
+              <figcaption>
+                <span class="tarjeta-quien"><strong>La Vete</strong><span>Veterinaria</span></span>
+                <a class="chip-ig" href="https://www.instagram.com/la_vete" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@la_vete</a>
+              </figcaption>
+            </figure>
+            <figure class="tarjeta" data-pos="3">
+              <div>
+                <svg class="comillas" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19C0 8 5 1.5 15 0l1.5 4.5C11 6 9 9.5 9 13h7v19H0zM23 32V19C23 8 28 1.5 38 0l1.5 4.5C34 6 32 9.5 32 13h7v19H23z"/></svg>
+                <blockquote>Se cumplió con el objetivo en creación de contenido. Muy responsable, cumplido y profesional.</blockquote>
+              </div>
+              <figcaption>
+                <span class="tarjeta-quien"><strong>Odus Odontología</strong><span>Odontología</span></span>
+                <a class="chip-ig" href="https://www.instagram.com/odus.odontologia" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@odus.odontologia</a>
+              </figcaption>
+            </figure>
+            <figure class="tarjeta" data-pos="3">
+              <div>
+                <svg class="comillas" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19C0 8 5 1.5 15 0l1.5 4.5C11 6 9 9.5 9 13h7v19H0zM23 32V19C23 8 28 1.5 38 0l1.5 4.5C34 6 32 9.5 32 13h7v19H23z"/></svg>
+                <blockquote>Nuestras ventas directas en web aumentaron gracias a embudos y pautas en Meta Ads optimizadas por Juan. El retorno en pauta de las gomitas enchiladas ha sido brutal.</blockquote>
+              </div>
+              <figcaption>
+                <span class="tarjeta-quien"><strong>Enchilaitos</strong><span>Gomitas enchiladas</span></span>
+                <a class="chip-ig" href="https://www.instagram.com/enchilaitos.med" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>@enchilaitos.med</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="seccion seccion--negra seccion--contacto" id="contacto">
+      <div class="contenedor dos-col">
+        <div>
+          <h2>Hablemos de <strong>tu negocio</strong></h2>
+          <p class="texto-grande">Escríbeme por WhatsApp o por correo para iniciar tu diagnóstico estratégico.</p>
+          <dl class="datos">
+            <div><dt>Correo</dt><dd><a href="mailto:juancallemarketing01@gmail.com">juancallemarketing01@gmail.com</a></dd></div>
+            <div><dt>WhatsApp</dt><dd><a href="https://wa.me/573053247075" target="_blank" rel="noopener">+57 305 324 7075</a></dd></div>
+            <div><dt>Ubicación</dt><dd>Medellín, Colombia</dd></div>
+          </dl>
+        </div>
+        <form class="formulario" id="formulario" novalidate>
+          <p class="formulario-ayuda">Completa tus datos y se abrirá WhatsApp con el mensaje listo para enviarme.</p>
+          <label for="f-nombre">Tu nombre</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+          <label for="f-negocio">Tu negocio</label>
+          <input id="f-negocio" name="negocio" type="text" autocomplete="organization">
+          <label for="f-mensaje">¿En qué te puedo ayudar?</label>
+          <textarea id="f-mensaje" name="mensaje" rows="4" required></textarea>
+          <p class="formulario-error" id="formulario-error" role="alert" hidden>Escribe tu nombre y tu mensaje para continuar.</p>
+          <button class="boton boton--verde" type="submit">Enviar por WhatsApp</button>
+          <a class="enlace-correo" href="mailto:juancallemarketing01@gmail.com">O escríbeme por correo</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-fila">
+      <p><strong>Juan Calle Marketing</strong> · Estratega digital</p>
+      <p>© <span id="anio">2026</span> Juan Calle Marketing. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Visor: aquí se reproduce cada video -->
+  <dialog class="visor" id="visor" aria-label="Reproductor de video">
+    <div class="visor-marco">
+      <button class="visor-cerrar" id="visor-cerrar" type="button">Cerrar</button>
+      <div class="visor-media" id="visor-media"></div>
+      <div class="visor-texto">
+        <p class="visor-marca" id="visor-marca"></p>
+        <p class="visor-sub" id="visor-sub"></p>
+      </div>
+      <div class="visor-acciones">
+        <button class="boton boton--borde-claro boton--chico" id="visor-ant" type="button">Anterior</button>
+        <a class="boton boton--verde boton--chico" id="visor-enlace" href="#" target="_blank" rel="noopener">Ver publicación original</a>
+        <button class="boton boton--borde-claro boton--chico" id="visor-sig" type="button">Siguiente</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
