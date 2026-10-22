@@ -433,6 +433,8 @@ p { margin: 0 0 1rem; }
 /* Comparte la fila con la foto: un poco más pequeño que los demás h1 */
 .hero h1 { font-size: clamp(2.3rem, 5vw, 4.6rem); }
 .hero h1 strong { position: relative; }
+/* Mantiene "la presencia" en la misma línea */
+.sin-corte { white-space: nowrap; }
 
 .hero-bajada { max-width: 31em; margin: 1.9rem 0 0; font-size: clamp(1.0625rem, 1.5vw, 1.25rem); line-height: 1.6; color: var(--gris-texto); }
 .hero-botones { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.25rem; }
