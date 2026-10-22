@@ -1820,6 +1820,9 @@ p { margin: 0 0 1rem; }
   .trabajo-enlace { font-size: .78rem; }
   .trabajo-play { width: 44px; height: 44px; }
   .trabajo-red { top: .55rem; left: .55rem; font-size: .68rem; }
+  /* El título se ajusta a su línea más larga para acercar la foto */
+  .hero-titular { grid-template-columns: auto clamp(96px, 100vw - 265px, 150px); justify-content: start; }
+  .hero h1 { width: min-content; }
   .hero-botones .boton { flex: 1 1 100%; }
   .hero-videos { gap: .5rem; }
   .hero-videos .trabajo:nth-child(1) { margin-top: 2rem; }
