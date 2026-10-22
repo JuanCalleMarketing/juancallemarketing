@@ -10,30 +10,74 @@
   <meta property="og:title" content="Juan Calle Marketing | Estratega Digital">
   <meta property="og:description" content="Estrategia, contenido persuasivo y publicidad digital para negocios que quieren vender más. Mira mi portafolio.">
   <meta property="og:url" content="https://juancallemarketing.vercel.app/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="256x256">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="preload" href="assets/images/logos/Logo JC-04.png" as="image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!--
+    Loader de entrada (solo en una carga completa de la página).
+    - Sin JavaScript no aparece: depende de la clase .cargando.
+    - animaciones.js lo cierra hacia los 0,9 s; si GSAP o la CDN fallan,
+      este temporizador lo cierra igual a los 1,7 s.
+    - .anim-pendiente oculta la entrada del inicio hasta que GSAP la anima;
+      si no llega, se quita a los 1,9 s y el inicio se ve completo.
+  -->
+  <script>
+    (function (d, w) {
+      var reducido = !w.matchMedia || w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var cerrado = false;
+      if ('scrollRestoration' in history && !location.hash) history.scrollRestoration = 'manual';
+      d.classList.add('cargando');
+      if (!reducido) d.classList.add('anim-pendiente');
+      w.JCMCargador = {
+        inicio: Date.now(),
+        reducido: reducido,
+        cerrar: function () {
+          if (cerrado) return;
+          cerrado = true;
+          d.classList.add('cargador-saliendo');
+          setTimeout(function () { d.classList.remove('cargando', 'cargador-saliendo'); }, reducido ? 300 : 900);
+        }
+      };
+      setTimeout(w.JCMCargador.cerrar, 1700);
+      setTimeout(function () { d.classList.remove('anim-pendiente'); }, 1900);
+    })(document.documentElement, window);
+  </script>
 </head>
 <body>
+  <!-- LOADER: decorativo, oculto para lectores de pantalla -->
+  <div class="cargador" id="cargador" aria-hidden="true">
+    <div class="cargador-marca">
+      <span class="cargador-halo"></span>
+      <img class="cargador-logo" src="assets/images/logos/Logo JC-04.png" alt="" width="1000" height="1000" decoding="sync">
+      <span class="cargador-linea"><span></span></span>
+    </div>
+  </div>
+
   <a class="saltar" href="#portafolio">Saltar al portafolio</a>
 
   <!-- ENCABEZADO -->
-  <header class="cabecera">
+  <header class="cabecera" id="cabecera">
+    <div class="progreso" aria-hidden="true"><span class="progreso-barra" id="progreso-barra"></span></div>
     <div class="contenedor cabecera-fila">
-      <a class="logo" href="#inicio" aria-label="Juan Calle Marketing, inicio">
-        <img class="logo-foto" src="assets/foto-juan.jpg" alt="Foto de Juan Calle" width="52" height="52">
-        <span class="logo-texto">Juan Calle <span class="ligero">Marketing</span></span>
+      <a class="logo" href="#inicio" aria-label="Juan Calle Marketing, ir al inicio">
+        <!-- Logo personal: versión oscura sobre fondos claros, versión blanca sobre fondos oscuros -->
+        <img class="logo-img logo-img--oscuro" src="assets/images/logos/Logo JC-03.png" alt="" width="1000" height="1000">
+        <img class="logo-img logo-img--claro" src="assets/images/logos/Logo JC-04.png" alt="" width="1000" height="1000">
       </a>
-      <button class="menu-boton" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <button class="menu-boton" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-boton-lineas" aria-hidden="true"></span>Menú
+      </button>
       <nav class="menu" id="menu" aria-label="Principal">
         <a href="#portafolio">Portafolio</a>
         <a href="#quien-soy">Quién soy</a>
         <a href="#sistema">Mi sistema</a>
         <a href="#resultados">Resultados</a>
         <a href="#testimonios">Testimonios</a>
-        <a class="boton boton--negro boton--chico" href="#contacto">Contacto</a>
+        <a class="boton boton--negro boton--chico menu-cta" href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
@@ -41,16 +85,27 @@
   <main>
     <!-- INICIO -->
     <section class="hero" id="inicio">
+      <div class="hero-halo" aria-hidden="true"></div>
       <div class="contenedor hero-grilla">
         <div class="hero-texto">
-          <p class="hero-rol"><span class="punto" aria-hidden="true"></span>Estratega digital en Medellín</p>
-          <h1>Construyo la <strong>presencia digital</strong> de tu negocio.</h1>
-          <p class="hero-bajada">Ayudo a marcas y negocios a escalar con estrategia de negocio, contenido persuasivo y publicidad digital de alta rentabilidad (Ads).</p>
-          <div class="hero-botones">
+          <p class="hero-rol" data-entrada><span class="punto" aria-hidden="true"></span>Estratega digital en Medellín</p>
+          <!-- Titular: el título y, a su lado, la foto circular de Juan -->
+          <div class="hero-titular">
+            <h1 id="hero-titulo">Construyo la <strong>presencia digital</strong> de tu negocio.</h1>
+            <!-- Marco: halo, anillo con luz que gira y punto verde (decorativos, en CSS) -->
+            <div class="hero-foto-marco">
+              <figure class="hero-foto">
+                <img src="assets/images/fotos/foto-juan.jpeg" alt="Juan Calle, estratega digital, con una tableta en la mano." width="960" height="1280" decoding="async">
+              </figure>
+              <p class="hero-foto-nombre"><span class="hero-foto-punto" aria-hidden="true"></span>Juan Calle</p>
+            </div>
+          </div>
+          <p class="hero-bajada" data-entrada>Ayudo a marcas y negocios a escalar con estrategia de negocio, contenido persuasivo y publicidad digital de alta rentabilidad (Ads).</p>
+          <div class="hero-botones" data-entrada>
             <a class="boton boton--negro" href="#portafolio">Ver portafolio</a>
             <a class="boton boton--borde" href="#sistema">Mi sistema de trabajo</a>
           </div>
-          <div class="validacion">
+          <div class="validacion" data-entrada>
             <div class="estrellas" role="img" aria-label="Cinco estrellas">
               <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -63,16 +118,24 @@
         </div>
         <div class="hero-lado">
           <div class="hero-videos" id="hero-videos"></div>
-          <p class="hero-pie">Haz clic en un video para verlo aquí mismo.</p>
+          <p class="hero-pie" data-entrada>Haz clic en un video para verlo aquí mismo.</p>
         </div>
       </div>
+      <a class="hero-scroll" href="#portafolio" data-entrada>
+        <span>Desliza</span>
+        <span class="hero-scroll-linea" aria-hidden="true"></span>
+      </a>
     </section>
 
     <!-- PORTAFOLIO -->
-    <section class="seccion seccion--negra" id="portafolio">
+    <section class="seccion seccion--negra" id="portafolio" data-tema="oscuro">
+      <div class="telon" aria-hidden="true"></div>
       <div class="contenedor">
-        <div class="encabezado">
-          <h2>Mi <strong>portafolio</strong> en videos y piezas.</h2>
+        <div class="encabezado encabezado--fila">
+          <div>
+            <p class="ceja"><span aria-hidden="true">01</span>Portafolio</p>
+            <h2 data-titulo>Mi <strong>portafolio</strong> en videos y piezas.</h2>
+          </div>
           <p>Cada trabajo se reproduce aquí mismo y lleva el enlace a su publicación original.</p>
         </div>
 
@@ -86,52 +149,118 @@
     </section>
 
     <!-- QUIÉN SOY -->
-    <section class="seccion" id="quien-soy">
-      <div class="contenedor dos-col">
-        <div>
-          <h2>Soy <strong>Juan Calle</strong>.</h2>
-          <p class="texto-grande">Estratega digital colombiano enfocado en ayudar a negocios y emprendedores a construir sistemas reales de crecimiento y ventas.</p>
-          <p class="texto-grande">Estructuro marcas desde la base: posicionamiento, comunicación, contenido, pauta y procesos comerciales, para que atraigan clientes, vendan más y operen con mayor claridad.</p>
-          <p class="texto-grande">Creo en un marketing que va más allá de publicar: entender el negocio, definir un mensaje claro y crear un ecosistema que convierta atención en clientes.</p>
+    <section class="seccion seccion--quien" id="quien-soy">
+      <div class="contenedor quien-grilla">
+        <div class="quien-texto">
+          <p class="ceja"><span aria-hidden="true">02</span>Quién soy</p>
+          <h2 data-titulo>Soy <strong>Juan Calle</strong>.</h2>
+          <p class="texto-grande" data-revelar>Estratega digital colombiano enfocado en ayudar a negocios y emprendedores a construir sistemas reales de crecimiento y ventas.</p>
+          <p class="texto-grande" data-revelar>Estructuro marcas desde la base: posicionamiento, comunicación, contenido, pauta y procesos comerciales, para que atraigan clientes, vendan más y operen con mayor claridad.</p>
+          <p class="texto-grande" data-revelar>Creo en un marketing que va más allá de publicar: entender el negocio, definir un mensaje claro y crear un ecosistema que convierta atención en clientes.</p>
         </div>
-        <div>
-          <ol class="pasos">
-            <li><span class="paso-n" aria-hidden="true">1</span>Diagnosticar dónde está la oportunidad.</li>
-            <li><span class="paso-n" aria-hidden="true">2</span>Construir una estrategia clara y accionable.</li>
-            <li><span class="paso-n" aria-hidden="true">3</span>Ejecutar contenido y activos de marca alineados al objetivo.</li>
-            <li><span class="paso-n" aria-hidden="true">4</span>Implementar sistemas de captación y seguimiento.</li>
-            <li><span class="paso-n" aria-hidden="true">5</span>Optimizar constantemente hasta ver resultados medibles.</li>
-          </ol>
+
+        <div class="retrato" id="retrato">
+          <div class="retrato-halo" aria-hidden="true"></div>
+          <svg class="retrato-orbitas" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+            <ellipse cx="200" cy="250" rx="196" ry="70"/>
+            <ellipse cx="200" cy="250" rx="168" ry="52"/>
+          </svg>
+          <figure class="retrato-foto">
+            <img src="assets/images/fotos/foto-juan.jpeg" alt="Juan Calle sentado al aire libre, con gafas de sol, revisando una tableta." width="960" height="1280" loading="lazy" decoding="async">
+          </figure>
+          <!-- Redes de Juan alrededor del retrato (enlaces) -->
+          <ul class="redes-orbita" aria-label="Redes de Juan Calle">
+            <li class="red-icono red-icono--instagram">
+              <a href="https://www.instagram.com/juancalle___?obrf=MWtiZGZvbzhncWpoZA==" target="_blank" rel="noopener" aria-label="Instagram de Juan Calle">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle class="relleno" cx="17.4" cy="6.6" r="1.1"/></svg>
+              </a>
+            </li>
+            <li class="red-icono red-icono--tiktok">
+              <a href="https://www.tiktok.com/@juancalle___?_r=1&amp;_t=ZS-9AkqAR2gfq8" target="_blank" rel="noopener" aria-label="TikTok de Juan Calle">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path class="relleno" d="M16.6 2h-3.3v13.3a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.3 6.3 0 1 0 5.3 6.2V8.6a7.7 7.7 0 0 0 4.4 1.4V6.7a4.4 4.4 0 0 1-4.4-4.4Z"/></svg>
+              </a>
+            </li>
+            <li class="red-icono red-icono--whatsapp">
+              <a href="https://wa.me/573053247075" target="_blank" rel="noopener" aria-label="Escribir a Juan Calle por WhatsApp">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 20l1.1-4A8.3 8.3 0 1 1 8.4 19z"/><path class="relleno" d="M9.2 7.8c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2.1.4 0 .5l-.4.6c-.1.2-.2.3 0 .5.4.7 1 1.4 1.7 1.9.4.3.8.5 1.2.7.2.1.3.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.3 0 1-.4 1.4-.4.4-1.1.8-1.9.7-1.1-.1-2.6-.7-3.9-1.9-1.4-1.3-2.2-2.8-2.4-3.7-.2-1 .2-1.9.6-2.6Z"/></svg>
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
+
+      <div class="contenedor">
+        <ol class="pasos" id="pasos">
+          <li><span class="paso-n" aria-hidden="true">1</span><span class="paso-texto">Diagnosticar dónde está la oportunidad.</span></li>
+          <li><span class="paso-n" aria-hidden="true">2</span><span class="paso-texto">Construir una estrategia clara y accionable.</span></li>
+          <li><span class="paso-n" aria-hidden="true">3</span><span class="paso-texto">Ejecutar contenido y activos de marca alineados al objetivo.</span></li>
+          <li><span class="paso-n" aria-hidden="true">4</span><span class="paso-texto">Implementar sistemas de captación y seguimiento.</span></li>
+          <li><span class="paso-n" aria-hidden="true">5</span><span class="paso-texto">Optimizar constantemente hasta ver resultados medibles.</span></li>
+        </ol>
+      </div>
+
+      <div class="contenedor certificaciones" aria-labelledby="cert-titulo">
+        <div class="certificaciones-texto">
+          <h3 id="cert-titulo">Formación y certificaciones</h3>
+          <p>Plataformas y empresas con las que he obtenido certificaciones.</p>
+        </div>
+        <ul class="logos-cert" id="logos-cert">
+          <li><img src="assets/images/logos-certificaciones/jhjhjgfyf.png" alt="Platzi" width="1080" height="1080" loading="lazy" decoding="async"></li>
+          <li><img src="assets/images/logos-certificaciones/ihkhkn.png" alt="Udemy" width="1080" height="1080" loading="lazy" decoding="async"></li>
+          <li><img src="assets/images/logos-certificaciones/jgjghkjlkl.png" alt="Coderhouse" width="1080" height="1080" loading="lazy" decoding="async"></li>
+          <li><img src="assets/images/logos-certificaciones/thhhyjyj.png" alt="Rappi" width="1080" height="1080" loading="lazy" decoding="async"></li>
+          <li><img src="assets/images/logos-certificaciones/hyjyjyjyj.png" alt="Ualá" width="1080" height="1080" loading="lazy" decoding="async"></li>
+        </ul>
       </div>
     </section>
 
     <!-- MI SISTEMA DE TRABAJO -->
     <section class="seccion seccion--sistema" id="sistema">
       <div class="contenedor">
-        <div class="encabezado">
-          <h2>Mi <strong>sistema de trabajo</strong></h2>
+        <div class="encabezado encabezado--fila">
+          <div>
+            <p class="ceja"><span aria-hidden="true">03</span>Mi sistema</p>
+            <h2 data-titulo>Mi <strong>sistema de trabajo</strong></h2>
+          </div>
           <p>Elige un servicio para ver exactamente qué incluye.</p>
         </div>
 
-        <div class="sistema">
+        <div class="sistema" id="sistema-zona">
+          <div class="sistema-lado">
           <div class="tabs" role="tablist" aria-label="Servicios" aria-orientation="vertical">
             <button class="tab" role="tab" id="tab-estrategia" aria-controls="panel-estrategia" aria-selected="true" type="button">
               <span class="tab-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
               <span class="tab-texto">Estrategia digital y parrilla de contenidos</span>
+              <span class="tab-n" aria-hidden="true">01</span>
+              <span class="tab-tiempo" aria-hidden="true"></span>
             </button>
             <button class="tab" role="tab" id="tab-contenido" aria-controls="panel-contenido" aria-selected="false" tabindex="-1" type="button">
               <span class="tab-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
               <span class="tab-texto">Creación de contenido</span>
+              <span class="tab-n" aria-hidden="true">02</span>
+              <span class="tab-tiempo" aria-hidden="true"></span>
             </button>
             <button class="tab" role="tab" id="tab-redes" aria-controls="panel-redes" aria-selected="false" tabindex="-1" type="button">
               <span class="tab-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span>
               <span class="tab-texto">Manejo y optimización de redes sociales</span>
+              <span class="tab-n" aria-hidden="true">03</span>
+              <span class="tab-tiempo" aria-hidden="true"></span>
             </button>
             <button class="tab" role="tab" id="tab-pauta" aria-controls="panel-pauta" aria-selected="false" tabindex="-1" type="button">
               <span class="tab-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
               <span class="tab-texto">Pauta</span>
+              <span class="tab-n" aria-hidden="true">04</span>
+              <span class="tab-tiempo" aria-hidden="true"></span>
             </button>
+          </div>
+            <!-- Pista de pausa: texto para PC (clic) o para celular (mantener presionado); cambia con el estado -->
+            <p class="sistema-pista">
+              <span class="sistema-pista-icono" aria-hidden="true"></span>
+              <span class="pista-corriendo pista-pc">Haz clic en el panel para pausar</span>
+              <span class="pista-pausa pista-pc">En pausa · haz clic para continuar</span>
+              <span class="pista-corriendo pista-tactil">Mantén presionado el panel para pausar</span>
+              <span class="pista-pausa pista-tactil">En pausa · suelta para continuar</span>
+            </p>
           </div>
 
           <div class="paneles">
@@ -214,13 +343,17 @@
     </section>
 
     <!-- RESULTADOS -->
-    <section class="seccion seccion--negra seccion--resultados" id="resultados">
+    <section class="seccion seccion--negra seccion--resultados" id="resultados" data-tema="oscuro">
+      <div class="telon" aria-hidden="true"></div>
       <div class="contenedor">
-        <div class="encabezado">
-          <h2>Resultados y <strong>alcance</strong></h2>
+        <div class="encabezado encabezado--fila">
+          <div>
+            <p class="ceja"><span aria-hidden="true">04</span>Resultados</p>
+            <h2 data-titulo>Resultados y <strong>alcance</strong></h2>
+          </div>
           <p>Estructuro tu ecosistema digital para que cada acción tenga un sentido y un contexto claros.</p>
         </div>
-        <div class="resultados">
+        <div class="resultados" id="resultados-lista">
           <article class="resultado">
             <span class="icono-verde" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
             <h3>Alcance medible</h3>
@@ -242,15 +375,20 @@
             <p>Atención total a la viabilidad, el crecimiento financiero y el retorno de inversión de tu negocio.</p>
           </article>
         </div>
-        <p class="cita-grande">Un ecosistema digital para que <strong>todo tenga sentido</strong> y contexto.</p>
+        <div class="cita-escena" id="cita-escena">
+          <p class="cita-grande" id="cita-grande">Un ecosistema digital para que <strong>todo tenga sentido</strong> y contexto.</p>
+        </div>
       </div>
     </section>
 
     <!-- OPCIONES DE INVERSIÓN -->
     <section class="seccion seccion--planes" id="planes">
       <div class="contenedor">
-        <div class="encabezado">
-          <h2>Opciones de <strong>inversión</strong></h2>
+        <div class="encabezado encabezado--fila">
+          <div>
+            <p class="ceja"><span aria-hidden="true">05</span>Inversión</p>
+            <h2>Opciones de <strong>inversión</strong></h2>
+          </div>
           <p>Elige mi paquete completo o diseña un plan adaptado a tus objetivos y a tu presupuesto.</p>
         </div>
         <div class="planes">
@@ -281,30 +419,33 @@
     <section class="seccion seccion--proceso" id="proceso">
       <div class="contenedor">
         <div class="encabezado">
-          <h2>Mi proceso de <strong>trabajo</strong></h2>
+          <h2 data-titulo>Mi proceso de <strong>trabajo</strong></h2>
         </div>
-        <ol class="proceso">
-          <li>
-            <span class="proceso-n" aria-hidden="true">1</span>
-            <h3>Descubrimiento y contexto</h3>
-            <p>Auditoría inicial de tu posicionamiento, competidores, audiencia y canales digitales para identificar oportunidades.</p>
-          </li>
-          <li>
-            <span class="proceso-n" aria-hidden="true">2</span>
-            <h3>Estrategia y objetivos</h3>
-            <p>Propuesta comercial, indicadores de crecimiento y lineamientos estratégicos del negocio.</p>
-          </li>
-          <li>
-            <span class="proceso-n" aria-hidden="true">3</span>
-            <h3>Contenido persuasivo</h3>
-            <p>Parrilla de contenidos, textos persuasivos, dirección de grabaciones y edición de videos y piezas gráficas.</p>
-          </li>
-          <li>
-            <span class="proceso-n" aria-hidden="true">4</span>
-            <h3>Pauta y optimización</h3>
-            <p>Campañas de conversión en Facebook Ads, medición constante de métricas clave y optimización enfocada en rentabilidad.</p>
-          </li>
-        </ol>
+        <div class="proceso-zona">
+          <div class="proceso-linea" aria-hidden="true"><span class="proceso-linea-luz" id="proceso-luz"></span></div>
+          <ol class="proceso" id="proceso-lista">
+            <li>
+              <span class="proceso-n" aria-hidden="true">1</span>
+              <h3>Descubrimiento y contexto</h3>
+              <p>Auditoría inicial de tu posicionamiento, competidores, audiencia y canales digitales para identificar oportunidades.</p>
+            </li>
+            <li>
+              <span class="proceso-n" aria-hidden="true">2</span>
+              <h3>Estrategia y objetivos</h3>
+              <p>Propuesta comercial, indicadores de crecimiento y lineamientos estratégicos del negocio.</p>
+            </li>
+            <li>
+              <span class="proceso-n" aria-hidden="true">3</span>
+              <h3>Contenido persuasivo</h3>
+              <p>Parrilla de contenidos, textos persuasivos, dirección de grabaciones y edición de videos y piezas gráficas.</p>
+            </li>
+            <li>
+              <span class="proceso-n" aria-hidden="true">4</span>
+              <h3>Pauta y optimización</h3>
+              <p>Campañas de conversión en Facebook Ads, medición constante de métricas clave y optimización enfocada en rentabilidad.</p>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -312,13 +453,14 @@
     <section class="seccion seccion--testimonios" id="testimonios">
       <div class="contenedor testimonios-fila">
         <div class="testimonios-texto">
-          <h2>Esto dijeron <strong>algunos de nuestros clientes</strong></h2>
+          <p class="ceja"><span aria-hidden="true">06</span>Testimonios</p>
+          <h2 data-titulo>Esto dijeron <strong>algunos de nuestros clientes</strong></h2>
           <p>Desliza la pila o usa las flechas para leer cada testimonio.</p>
           <div class="pila-controles">
-            <button class="pila-boton" id="pila-ant" type="button" aria-label="Testimonio anterior">
+            <button class="pila-boton" id="pila-ant" type="button" aria-label="Testimonio anterior" aria-controls="pila">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             </button>
-            <button class="pila-boton pila-boton--lleno" id="pila-sig" type="button" aria-label="Testimonio siguiente">
+            <button class="pila-boton pila-boton--lleno" id="pila-sig" type="button" aria-label="Testimonio siguiente" aria-controls="pila">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
             <span class="pila-contador" id="pila-contador" aria-live="polite"></span>
@@ -394,10 +536,12 @@
     </section>
 
     <!-- CONTACTO -->
-    <section class="seccion seccion--negra seccion--contacto" id="contacto">
+    <section class="seccion seccion--negra seccion--contacto" id="contacto" data-tema="oscuro">
+      <div class="telon" aria-hidden="true"></div>
       <div class="contenedor dos-col">
         <div>
-          <h2>Hablemos de <strong>tu negocio</strong></h2>
+          <p class="ceja"><span aria-hidden="true">07</span>Contacto</p>
+          <h2 data-titulo>Hablemos de <strong>tu negocio</strong></h2>
           <p class="texto-grande">Escríbeme por WhatsApp o por correo para iniciar tu diagnóstico estratégico.</p>
           <dl class="datos">
             <div><dt>Correo</dt><dd><a href="mailto:juancallemarketing01@gmail.com">juancallemarketing01@gmail.com</a></dd></div>
@@ -407,13 +551,14 @@
         </div>
         <form class="formulario" id="formulario" novalidate>
           <p class="formulario-ayuda">Completa tus datos y se abrirá WhatsApp con el mensaje listo para enviarme.</p>
-          <label for="f-nombre">Tu nombre</label>
-          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
-          <label for="f-negocio">Tu negocio</label>
+          <label for="f-nombre">Tu nombre <span class="requerido" aria-hidden="true">*</span></label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required aria-describedby="formulario-error">
+          <label for="f-negocio">Tu negocio <span class="opcional">(opcional)</span></label>
           <input id="f-negocio" name="negocio" type="text" autocomplete="organization">
-          <label for="f-mensaje">¿En qué te puedo ayudar?</label>
-          <textarea id="f-mensaje" name="mensaje" rows="4" required></textarea>
+          <label for="f-mensaje">¿En qué te puedo ayudar? <span class="requerido" aria-hidden="true">*</span></label>
+          <textarea id="f-mensaje" name="mensaje" rows="4" required aria-describedby="formulario-error"></textarea>
           <p class="formulario-error" id="formulario-error" role="alert" hidden>Escribe tu nombre y tu mensaje para continuar.</p>
+          <p class="formulario-estado" id="formulario-estado" role="status"></p>
           <button class="boton boton--verde" type="submit">Enviar por WhatsApp</button>
           <a class="enlace-correo" href="mailto:juancallemarketing01@gmail.com">O escríbeme por correo</a>
         </form>
@@ -421,10 +566,17 @@
     </section>
   </main>
 
-  <footer class="pie">
-    <div class="contenedor pie-fila">
-      <p><strong>Juan Calle Marketing</strong> · Estratega digital</p>
-      <p>© <span id="anio">2026</span> Juan Calle Marketing. Todos los derechos reservados.</p>
+  <footer class="pie" id="pie" data-tema="oscuro">
+    <div class="contenedor">
+      <div class="pie-marca">
+        <img class="pie-logo" id="pie-logo" src="assets/images/logos/Logo JC-04.png" alt="Juan Calle" width="1000" height="1000" loading="lazy" decoding="async">
+        <a class="pie-arriba" href="#inicio">Volver arriba <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
+      </div>
+      <div class="pie-linea" aria-hidden="true"><span id="pie-luz"></span></div>
+      <div class="pie-fila">
+        <p><strong>Juan Calle Marketing</strong> · Estratega digital</p>
+        <p>© <span id="anio">2026</span> Juan Calle Marketing. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 
@@ -445,6 +597,11 @@
     </div>
   </dialog>
 
-  <script src="script.js"></script>
+  <!-- script.js va primero: el portafolio, el visor, las pestañas y el formulario no dependen de la CDN. -->
+  <script src="assets/js/script.js" defer></script>
+  <!-- Librerías de animación (GSAP + ScrollTrigger, versiones fijas). Si no cargan, la página funciona igual sin animaciones. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/animaciones.js" defer></script>
 </body>
 </html>
